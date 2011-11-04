@@ -16,10 +16,8 @@ public class App {
 		creature.setY(400);
 		grid.getThings().add(creature);
 		
-		Tree tree = new Tree();
-        tree.setX(700);
-        tree.setY(700);
-        grid.getThings().add(tree);
+		createTree(grid,700,700);
+		createTree(grid,600,750);
         
         Shroom shroom = new Shroom();
         shroom.setX(750);
@@ -48,6 +46,15 @@ public class App {
 			}
         }
 	}
+
+
+    private static void createTree(Grid grid, int x, int y)
+    {
+        Tree tree = new Tree();
+        tree.setX(x);
+        tree.setY(y);
+        grid.getThings().add(tree);
+    }
 	
 
 	public static GridPainter getGridPainter() {
