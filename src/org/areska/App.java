@@ -11,15 +11,16 @@ public class App {
 	
 	public static void main(String[] args) {
 		Grid grid = new Grid(1000, 1000);
-		Creature creature = new Creature();
-		creature.setX(400);
-		creature.setY(400);
-		grid.getThings().add(creature);
+		Creature creature = createCreature(grid,400,400);
 		
 		createTree(grid,700,700);
 		createTree(grid,600,750);
+		createTree(grid,800,600);
+		createTree(grid,600,600);
         
         createShroom(grid,750,700);
+        createShroom(grid,720,630);
+        createShroom(grid,600,700);
 		
 		CreatureRunner creatureRunner = new CreatureRunner();
 		creatureRunner.addCreature(creature);
@@ -44,15 +45,22 @@ public class App {
         }
 	}
 
-
-    private static void createShroom(Grid grid, int x, int y)
+    private static Creature createCreature(Grid grid,int x, int y)
+    {
+        Creature creature = new Creature();
+		creature.setX(x);
+		creature.setY(y);
+		grid.getThings().add(creature);
+        return creature;
+    }
+	
+	private static void createShroom(Grid grid, int x, int y)
     {
         Shroom shroom = new Shroom();
         shroom.setX(x);
         shroom.setY(y);
         grid.getThings().add(shroom);
     }
-
 
     private static void createTree(Grid grid, int x, int y)
     {
@@ -61,7 +69,6 @@ public class App {
         tree.setY(y);
         grid.getThings().add(tree);
     }
-	
 
 	public static GridPainter getGridPainter() {
 		return gridPainter;
