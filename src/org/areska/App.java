@@ -19,10 +19,7 @@ public class App {
 		createTree(grid,700,700);
 		createTree(grid,600,750);
         
-        Shroom shroom = new Shroom();
-        shroom.setX(750);
-        shroom.setY(700);
-        grid.getThings().add(shroom);
+        createShroom(grid,750,700);
 		
 		CreatureRunner creatureRunner = new CreatureRunner();
 		creatureRunner.addCreature(creature);
@@ -46,6 +43,15 @@ public class App {
 			}
         }
 	}
+
+
+    private static void createShroom(Grid grid, int x, int y)
+    {
+        Shroom shroom = new Shroom();
+        shroom.setX(x);
+        shroom.setY(y);
+        grid.getThings().add(shroom);
+    }
 
 
     private static void createTree(Grid grid, int x, int y)
