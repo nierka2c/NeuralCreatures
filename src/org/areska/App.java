@@ -18,7 +18,7 @@ public class App {
 		createTree(grid,800,600);
 		createTree(grid,600,600);
         
-        createShroom(grid,750,700);
+        createShroom(grid,745,700);
         createShroom(grid,720,630);
         createShroom(grid,600,700);
 		
